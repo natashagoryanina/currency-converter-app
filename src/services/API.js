@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//! EUR
 const eurOptions = {
     method: 'GET',
     url: 'https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest',
@@ -10,16 +11,17 @@ const eurOptions = {
     }
 };
 
-export const getEURExchangeRate = async () => {
+export const getEURExchangeRate = async (currency) => {
     try {
         const response = await axios.request(eurOptions);
-        console.log("eur", response.data.rates.UAH);
-        return response.data.rates.UAH;
+        console.log(response.data.rates);
+        return response.data.rates[currency];
     } catch (error) {
         console.error(error);
     }
 };
 
+//! USD
 const usdOptions = {
     method: 'GET',
     url: 'https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest',
@@ -30,12 +32,31 @@ const usdOptions = {
     }
 };
 
-export const getUSDExchangeRate = async () => {
+export const getUSDExchangeRate = async (currency) => {
     try {
         const response = await axios.request(usdOptions);
-        console.log("usd", response.data.rates.UAH);
-        return response.data.rates.UAH;
+        return response.data.rates[currency];
     } catch (error) {
         console.error(error);
     }
 };
+
+const uahOptions = {
+    method: 'GET',
+    url: 'https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest',
+    params: {base: 'UAH'},
+    headers: {
+      'X-RapidAPI-Key': '0cf9e79df1msh080e287a6e80370p1865bfjsn39af9ab38218',
+      'X-RapidAPI-Host': 'currency-conversion-and-exchange-rates.p.rapidapi.com'
+    }
+};
+
+export const getUAHExchangeRate = async () => {
+    try {
+        const response = await axios.request(uahOptions);
+        return response.data.rates;
+    } catch (error) {
+        console.error(error);
+    }
+};
+

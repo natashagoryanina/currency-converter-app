@@ -5,12 +5,10 @@ import { getEURExchangeRate, getUSDExchangeRate } from '../../services/API';
 
 const ExchangeRates = ({eur, usd, setEUR, setUSD}) => {
     useEffect(() => {
-        getEURExchangeRate().then(eur => setEUR(eur));
-        getUSDExchangeRate().then(usd => setUSD(usd));
+        getEURExchangeRate('UAH').then(eur => setEUR(eur));
+        getUSDExchangeRate('UAH').then(usd => setUSD(usd));
     }, [setEUR, setUSD]);
 
-    getUSDExchangeRate();
-    
     return (
         <div>
             <h2>Exchange Rates</h2>
