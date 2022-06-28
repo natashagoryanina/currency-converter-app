@@ -4,6 +4,7 @@ import CurrencyConverterPage from '../../pages/CurrencyConverterPage';
 import ExchangeRatesPage from '../../pages/ExchangeRatesPage';
 
 const Main = () => {
+
     return (
         <main>
             <Routes>
