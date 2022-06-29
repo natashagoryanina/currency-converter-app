@@ -2,21 +2,21 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { setEUR, setUSD } from '../../redux/currency/currencyActions';
 import { getEURExchangeRate, getUSDExchangeRate } from '../../services/API';
+import { ExchangeRatesContainer } from './ExchangeRatesStyled';
 
 const ExchangeRates = ({eur, usd, setEUR, setUSD}) => {
     useEffect(() => {
-        getEURExchangeRate('UAH').then(eur => setEUR(eur));
-        getUSDExchangeRate('UAH').then(usd => setUSD(usd));
+        getEURExchangeRate('UAH').then(eur => setEUR(eur.toFixed(2)));
+        getUSDExchangeRate('UAH').then(usd => setUSD(usd.toFixed(2)));
     }, [setEUR, setUSD]);
 
     return (
-        <div>
-            <h2>Exchange Rates</h2>
-            <table>
+        <ExchangeRatesContainer>
+            <table className='exchange-rates-table'>
                 <thead>
                     <tr>
-                        <th>КУРС ДO ГРИВНІ</th>
-                        <th>Середній курс</th>
+                        <th>Exchange rate to hryvnia</th>
+                        <th>Average exchange rate</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +30,7 @@ const ExchangeRates = ({eur, usd, setEUR, setUSD}) => {
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </ExchangeRatesContainer>
     );
 };
 

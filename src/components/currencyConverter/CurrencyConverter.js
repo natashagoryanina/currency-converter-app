@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getUAHExchangeRate } from '../../services/API';
+import { CurrencyConverterContainer } from './CurrencyConverterStyled';
 
 const CurrencyConverter = () => {
     const [amountFirst, setAmountFirst] = useState();
@@ -56,8 +57,8 @@ const CurrencyConverter = () => {
     };
 
     return (
-       <div>
-           <form>
+       <CurrencyConverterContainer>
+           <form className=''>
                <div>
                    <label>
                        Amount
@@ -101,7 +102,7 @@ const CurrencyConverter = () => {
                    </label>
                </div>
            </form>
-       </div>
+       </CurrencyConverterContainer>
     );
 };
 

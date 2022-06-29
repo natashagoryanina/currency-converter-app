@@ -40,6 +40,7 @@ export const getUSDExchangeRate = async (currency) => {
     }
 };
 
+//! UAH
 const uahOptions = {
     method: 'GET',
     url: 'https://currency-conversion-and-exchange-rates.p.rapidapi.com/latest',
