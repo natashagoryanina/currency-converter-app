@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const ExchangeRatesContainer = styled.div`
+
     .exchange-rates-table {
         margin: 100px auto;
+
         th {
             padding: 15px;
         }
