@@ -10,11 +10,13 @@ export const ExchangeRatesContainer = styled.div`
         th, td {
             text-align: center;
             font-family: inherit; 
-            font-size: 400; 
+            font-size: 20px; 
+            font-weight: 600;
             line-height: inherit;
+            
             color: #061E47;
-            background-color: #ffffff6e;
-            border: 1px solid #b0c2e6;
+            background-color: #8cb3e6eb;
+            border: 1px solid #ffffff;
             border-collapse: collapse;
             border-radius: 0.4rem;
         }
