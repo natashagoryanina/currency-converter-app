@@ -14,7 +14,6 @@ const eurOptions = {
 export const getEURExchangeRate = async (currency) => {
     try {
         const response = await axios.request(eurOptions);
-        console.log(response.data.rates);
         return response.data.rates[currency];
     } catch (error) {
         console.error(error);

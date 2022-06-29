@@ -13,18 +13,22 @@ const ExchangeRates = ({eur, usd, setEUR, setUSD}) => {
         <div>
             <h2>Exchange Rates</h2>
             <table>
-                <tr>
-                    <th>КУРС ДO ГРИВНІ</th>
-                    <th>Середній курс</th>
-                </tr>
-                <tr>
-                    <th>USD</th>
-                    <td>{usd}</td>
-                </tr>
-                <tr>
-                    <th>EUR</th>
-                    <td>{eur}</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>КУРС ДO ГРИВНІ</th>
+                        <th>Середній курс</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>USD</th>
+                        <td>{usd}</td>
+                    </tr>
+                    <tr>
+                        <th>EUR</th>
+                        <td>{eur}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     );
